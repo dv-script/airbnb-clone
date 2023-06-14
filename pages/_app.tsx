@@ -1,21 +1,19 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider, DefaultTheme } from 'styled-components'
-import GlobalStyle from '../components/globalstyles'
+import Head from 'next/head'
 
-const theme: DefaultTheme = {
-  colors: {
-    primary: '#111',
-    secondary: '#0070f3',
-  },
-}
+import GlobalStyle from '../styles/GlobalStyles'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Head>
+        <title>Airbnb</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet" />
+      </Head>
+      <GlobalStyle />
+      <Component {...pageProps} />
     </>
   )
 }
