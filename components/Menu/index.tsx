@@ -2,13 +2,12 @@ import * as S from './style';
 
 import LogoImg from "../../public/logo.png";
 
-import { GrLanguage } from 'react-icons/gr';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { FaUserCircle } from 'react-icons/fa';
-
-import Search from '../Search';
+import MiddleButton from '../Buttons/CheckInOut';
+import ChangeLanguage from '../Buttons/ChangeLanguage';
+import Profile from '../Buttons/Profile';
 
 export default function Menu() {
+
     return (
         <S.Container>
 
@@ -18,19 +17,11 @@ export default function Menu() {
                 </S.LogoLink>
             </S.LeftContainer>
 
-            <S.MiddleContainer>
-                <S.MiddleButton>Any place</S.MiddleButton>
-                <S.MiddleButton>Any week</S.MiddleButton>
-                <S.MiddleButton>Guests?</S.MiddleButton>
-                <Search />
-            </S.MiddleContainer>
+            <MiddleButton />
 
             <S.RightContainer>
-                <S.Language><GrLanguage size={20} /></S.Language>
-                <S.Login>
-                    <RxHamburgerMenu size={20}/>
-                    <FaUserCircle size={30} color='grey'/>
-                </S.Login>
+                    <ChangeLanguage size={20}/>
+                    <Profile />
             </S.RightContainer>
 
         </S.Container>
